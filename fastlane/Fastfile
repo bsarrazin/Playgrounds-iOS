@@ -1,0 +1,48 @@
+#
+#  Fastfile
+#
+#  Copyright (c) 2017 7swift IO. All rights reserved.
+#
+
+fastlane_require 'colorize'
+
+fastlane_version "2.69.0"
+default_platform :ios
+
+platform :ios do
+
+  # --------------------------------------------------
+  # Set Up & Tear Down
+  # --------------------------------------------------
+
+  before_all do |lane, options|
+  end
+
+  after_all do |lane, options| # This block is called, only if the executed lane was successful
+  end
+
+  # --------------------------------------------------
+  # Lanes
+  # --------------------------------------------------
+
+  import_from_git(
+    branch: '0.1.0',
+    url: 'git@github.com:bsarrazin/lanes.git',
+    path: 'fastlane/lanes/playground.rb'
+  )
+
+  lane :play do
+    playground(
+      playground_scheme: 'HavingFun',
+      playground_workspace: 'HavingFun.xcworkspace'
+    )
+  end
+
+  # --------------------------------------------------
+  # Error Handling
+  # --------------------------------------------------
+
+  error do |lane, exception, options|
+  end
+
+end
