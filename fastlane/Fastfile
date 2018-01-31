@@ -6,7 +6,7 @@
 
 fastlane_require 'colorize'
 
-fastlane_version "2.69.0"
+fastlane_version "2.79.0"
 default_platform :ios
 
 platform :ios do
@@ -33,8 +33,8 @@ platform :ios do
 
   lane :play do
     playground(
-      playground_scheme: 'HavingFun',
-      playground_workspace: 'HavingFun.xcworkspace'
+      playground_scheme: 'Playground',
+      playground_workspace: 'Playground.xcworkspace'
     )
   end
 
