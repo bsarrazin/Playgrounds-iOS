@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire"
 github "ReactiveX/RxSwift"
 github "Realm/realm-cocoa"
+github "kylef/Stencil"
