@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.0)
+  - PathKit (0.8.0)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
+  - RxSwift (4.1.2)
+  - Stencil (0.10.1):
+    - PathKit (~> 0.8.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - RealmSwift
+  - RxSwift
+  - Stencil
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  PathKit: dcab05d701474011aae0e40cf892298a831f63d6
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  Stencil: 40b382c52edab08f1e800e6144c1f04ae47a7a9a
+
+PODFILE CHECKSUM: b84c2c908894fa16368ab7969b1e892f3546755b
+
+COCOAPODS: 1.4.0
