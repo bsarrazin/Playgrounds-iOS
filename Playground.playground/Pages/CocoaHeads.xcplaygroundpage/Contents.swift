@@ -27,6 +27,20 @@ extension UITextField {
     }
 }
 
+struct Credentials {
+    let email: String
+    let password: String
+}
+
+extension Optional where Wrapped == String {
+    var orEmpty: String {
+        switch self {
+        case .some(let value): return value
+        case .none: return ""
+        }
+    }
+}
+
 class ViewController: UIViewController {
     
     private let bag = DisposeBag()
@@ -70,9 +84,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let credentials = Observable<Credentials>.combineLatest(
+            emailTextField.rx.text,
+            passwordTextField.rx.text) {
+                return .init(email: $0.orEmpty, password: $1.orEmpty)
+            }
+        
         button.rx.tap
-            .subscribe(onNext: {
-                print("foo")
+            .withLatestFrom(credentials)
+            .subscribe(onNext: { creds in
+                print(creds)
             })
             .disposed(by: bag)
     }
