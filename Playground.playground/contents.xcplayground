@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios'>
+<playground version='6.0' target-platform='ios' display-mode='raw' executeOnSourceChanges='false'>
     <pages>
-        <page name='CorePlatform'/>
-        <page name='PlatformKit'/>
+        <page name='Alamofire'/>
+        <page name='Associated Objects'/>
+        <page name='Behaviours'/>
+        <page name='Cloak'/>
+        <page name='Composite'/>
+        <page name='Grand Central Dispatch'/>
+        <page name='Lenses'/>
+        <page name='Locale'/>
+        <page name='Loggable'/>
+        <page name='Mapping'/>
+        <page name='Method Dispatch'/>
+        <page name='Operation Queues'/>
+        <page name='Rx'/>
+        <page name='Tinder Card'/>
+        <page name='View Model'/>
+        <page name='Untitled Page 2'/>
     </pages>
 </playground>

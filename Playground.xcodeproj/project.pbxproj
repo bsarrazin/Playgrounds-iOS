@@ -99,7 +99,6 @@
 				B5FC2A7F2022197600A15513 /* Frameworks */,
 				B5FC2A802022197600A15513 /* Headers */,
 				B5FC2A812022197600A15513 /* Resources */,
-				1058E81948626EFBBE1CF968 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -121,6 +120,7 @@
 				TargetAttributes = {
 					B5FC2A822022197600A15513 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -153,21 +153,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1058E81948626EFBBE1CF968 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Playground/Pods-Playground-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D3CF61A547D6F3894C53991A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 119F230934C69C0984C6A025 /* Pods-Playground.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -329,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.7swift.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -338,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CD8728C28634127C7C69FBB /* Pods-Playground.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
