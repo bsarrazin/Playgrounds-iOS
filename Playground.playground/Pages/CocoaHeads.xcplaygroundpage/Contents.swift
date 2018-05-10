@@ -17,6 +17,8 @@ extension UIButton {
 
 class ViewController: UIViewController {
     
+    private let bag = DisposeBag()
+    
     @IBOutlet private(set) var button: UIButton!
     
     convenience init() { self.init(nibName: nil, bundle: nil) }
@@ -45,11 +47,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.addTarget(self, action: #selector(foo(_:)), for: .touchUpInside)
-    }
-    
-    @IBAction func foo(_ sender: UIButton!) {
-        print("foo")
+        button.rx.tap
+            .subscribe(onNext: {
+                print("foo")
+            })
+            .disposed(by: bag)
     }
 }
 
