@@ -1,6 +1,9 @@
 import Alamofire
+import PlaygroundSupport
 import RxSwift
 import UIKit
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 /*:
  # Basics
@@ -140,16 +143,16 @@ xexample("Deferred Factories") { _ in
             .subscribe(
                 onNext: { (i) in
                     print("Next: \(i)")
-            },
+                },
                 onError: { error in
                     print("Error: \(error)")
-            },
+                },
                 onCompleted: {
                     print("Completed!")
-            },
+                },
                 onDisposed: {
                     print("Disposed!")
-            })
+                })
             .disposed(by: bag)
     }
 }
@@ -232,105 +235,11 @@ xexample("PublishSubject") { _ in
     subject.onNext(3) // Emitted but no observer
     subject.onNext(4) // Emitted but no observer
     subject.subscribe(onNext: { i in
-        print("Next: \(i)")
-    }).disposed(by: bag)
+            print("Next: \(i)")
+        })
+        .disposed(by: bag)
     subject.onNext(5)
     subject.onNext(6)
     subject.onNext(7)
     subject.onNext(8)
 }
-
-
-
-//struct Game {}
-//struct Team {}
-//
-//enum FetchError: Error {
-//    case unexpectedFormat
-//}
-//
-//func fetchResults() -> Observable<Game> {
-//    return Observable<Game>.create { observer in
-//        Alamofire.request(resultsURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-//            .responseSwiftyJSON { (dataResponse) in
-//                if let json = dataResponse.value, json["status"].string == "success" {
-//                    let gamesArr = json["data"].array
-//                    gamesArr.forEach {
-//                        let game = Game()
-//                        observer.onNext(game)
-//                    }
-//                    observer.onCompleted()
-//                } else {
-//                    observer.onError(FetchError.unexpectedFormat)
-//                }
-//        }
-//        return Disposables.create()
-//    }
-//}
-//
-//func configure() {
-//    fetchResults()
-//        .subscribe()
-//        .do(
-//            onNext: { (game) in
-//                let homeTeam = teams.value[game.teamHomeId]
-//                let awayTeam = teams.value[game.teamAwayId]
-//
-//                if game.scoreHomeId > game.scoreAwayId {
-//                    homeTeam.points += 3
-//                    homeTeam.victories += 1
-//                    awayTeam.defeats += 1
-//                }
-//                else if game.scoreHomeId == game.scoreAwayId {
-//                    homeTeam.points += 1
-//                    awayTeam.points += 1
-//                    homeTeam.draws += 1
-//                    awayTeam.draws += 1
-//                }
-//                else{
-//                    awayTeam.points += 3
-//                    awayTeam.victories += 1
-//                    homeTeam.defeats += 1
-//                }
-//                homeTeam.netGoals = game.scoreHomeId - game.scoreAwayId
-//                awayTeam.netGoals = game.scoreAwayId - game.scoreHomeId
-//        },
-//            onCompleted: {
-//                teams.value.sort(by: { $0.points > $1.points })
-//        })
-//}
-//
-//func sideEffect() {
-//    fetchResults()
-//        .subscribe()
-//        .do(
-//            onNext: { (game) in
-//                let homeTeam = teams.value[game.teamHomeId]
-//                let awayTeam = teams.value[game.teamAwayId]
-//
-//                if game.scoreHomeId > game.scoreAwayId {
-//                    homeTeam.points += 3
-//                    homeTeam.victories += 1
-//                    awayTeam.defeats += 1
-//                }
-//                else if game.scoreHomeId == game.scoreAwayId {
-//                    homeTeam.points += 1
-//                    awayTeam.points += 1
-//                    homeTeam.draws += 1
-//                    awayTeam.draws += 1
-//                }
-//                else{
-//                    awayTeam.points += 3
-//                    awayTeam.victories += 1
-//                    homeTeam.defeats += 1
-//                }
-//                homeTeam.netGoals = game.scoreHomeId - game.scoreAwayId
-//                awayTeam.netGoals = game.scoreAwayId - game.scoreHomeId
-//        },
-//            onCompleted: {
-//                teams.value.sort(by: { $0.points > $1.points })
-//        })
-//        .dispose()
-//}
-//
-
