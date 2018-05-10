@@ -3,6 +3,15 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+extension UIAlertController {
+    static func make(title: String, message: String, handler: @escaping (UIAlertAction) -> Void) -> UIAlertController {
+        let action = UIAlertAction(title: "Ok", style: .default, handler: handler)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(action)
+        return alertController
+    }
+}
+
 extension UIButton {
     static func make(title: String) -> UIButton {
         let button = UIButton(type: .system)
@@ -107,6 +116,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.text = "b@srz.io"
+        passwordTextField.text = "password"
+        
+        let showAlert: (String, String) -> Void = { title, message in
+            let controller = UIAlertController.make(title: title, message: message) { _ in
+                self.dismiss(animated: true, completion: nil)
+            }
+            self.present(controller, animated: true, completion: nil)
+        }
+        
         let credentials = Observable<Credentials>.combineLatest(
             emailTextField.rx.text,
             passwordTextField.rx.text) {
@@ -115,9 +134,15 @@ class ViewController: UIViewController {
         
         button.rx.tap
             .withLatestFrom(credentials)
-            .subscribe(onNext: { creds in
-                print(creds)
-            })
+            .flatMap(remote.fetch)
+            .subscribe(
+                onNext: { result in
+                    showAlert("Success", result)
+                },
+                onError: { error in
+                    showAlert("Oops", error.localizedDescription)
+                }
+            )
             .disposed(by: bag)
     }
 }
