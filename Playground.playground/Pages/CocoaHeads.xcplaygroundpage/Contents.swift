@@ -10,8 +10,20 @@ extension UIButton {
         button.layer.cornerRadius = 5
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         return button
+    }
+}
+
+extension UITextField {
+    static func make(placeholder: String) -> UITextField {
+        let textField = UITextField(frame: .zero)
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.backgroundColor = #colorLiteral(red: 1, green: 0.9803921569, blue: 0.5882352941, alpha: 1)
+        textField.placeholder = placeholder
+        textField.textAlignment = .center
+        return textField
     }
 }
 
@@ -20,29 +32,40 @@ class ViewController: UIViewController {
     private let bag = DisposeBag()
     
     @IBOutlet private(set) var button: UIButton!
+    @IBOutlet private(set) var emailTextField: UITextField!
+    @IBOutlet private(set) var passwordTextField: UITextField!
     
     convenience init() { self.init(nibName: nil, bundle: nil) }
     
     override func loadView() {
         super.loadView()
-        configureView()
+        view.backgroundColor = .white
+        configureTextFields()
         configureButton()
     }
     
-    private func configureView() {
-        view.bounds = CGRect(origin: .zero, size: UIDevice.Metrics.iPhoneX.size)
-        view.backgroundColor = .white
+    private func configureButton() {
+        button = UIButton.make(title: "TAP ME!")
+        view.addSubview(button)
+        button.frame = makeFrame(140)
     }
     
-    private func configureButton() {
-        button = UIButton.make(title: "Tap Me!")
-        view.addSubview(button)
-        NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 30),
-            button.widthAnchor.constraint(equalToConstant: 250),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+    private func configureTextFields() {
+        emailTextField = UITextField.make(placeholder: "EMAIL")
+        view.addSubview(emailTextField)
+        emailTextField.frame = makeFrame(60)
+        
+        passwordTextField = UITextField.make(placeholder: "PASSWORD")
+        view.addSubview(passwordTextField)
+        passwordTextField.frame = makeFrame(100)
+    }
+    
+    private func makeFrame(_ y: CGFloat) -> CGRect {
+        let size = view.bounds
+        let width: CGFloat = size.width * 3/4
+        let height: CGFloat = 30.0
+        let x: CGFloat = (size.width - width) / 2
+        return CGRect(x: x, y: y, width: width, height: height)
     }
     
     override func viewDidLoad() {
@@ -55,6 +78,12 @@ class ViewController: UIViewController {
     }
 }
 
+
+let frame = CGRect(origin: .zero, size: UIDevice.Metrics.iPadPro97.size)
+let window = UIWindow(frame: frame)
 let viewController = ViewController()
-PlaygroundPage.current.liveView = viewController.view
+window.rootViewController = viewController
+window.makeKeyAndVisible()
+
+PlaygroundPage.current.liveView = window
 PlaygroundPage.current.needsIndefiniteExecution = true
