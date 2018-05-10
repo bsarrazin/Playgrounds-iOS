@@ -8,6 +8,7 @@
         <page name='Composite'/>
         <page name='Grand Central Dispatch'/>
         <page name='Lenses'/>
+        <page name='Loading HUD'/>
         <page name='Locale'/>
         <page name='Loggable'/>
         <page name='Mapping'/>
@@ -16,6 +17,6 @@
         <page name='Rx'/>
         <page name='Tinder Card'/>
         <page name='View Model'/>
-        <page name='Untitled Page 2'/>
+        <page name='CocoaHeads'/>
     </pages>
 </playground>

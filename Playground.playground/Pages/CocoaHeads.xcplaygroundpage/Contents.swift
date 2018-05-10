@@ -12,8 +12,6 @@ UIDevice.Metrics.iPhone8Plus.size
 //let boundingRect = CGSize(width: 300, height: CGFloat.greatestFiniteMagnitude)
 //let rect = str.boundingRect(with: boundingRect, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
 
-
-
 class ViewController: UIViewController {
     private let bag = DisposeBag()
     private var button: UIButton!
