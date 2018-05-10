@@ -41,9 +41,31 @@ extension Optional where Wrapped == String {
     }
 }
 
+struct Remote {
+    
+    enum Error: Swift.Error {
+        case invalidCredentials
+    }
+    
+    func fetch(with credentials: Credentials) -> Observable<String> {
+        return Observable.create { observer in
+            if credentials.email == "b@srz.io", credentials.password == "password" {
+                observer.onNext("SUCCESS")
+                observer.onCompleted()
+            } else {
+                observer.onError(Error.invalidCredentials)
+            }
+            
+            return Disposables.create()
+        }
+    }
+    
+}
+
 class ViewController: UIViewController {
     
     private let bag = DisposeBag()
+    private let remote = Remote()
     
     @IBOutlet private(set) var button: UIButton!
     @IBOutlet private(set) var emailTextField: UITextField!
@@ -99,7 +121,6 @@ class ViewController: UIViewController {
             .disposed(by: bag)
     }
 }
-
 
 let frame = CGRect(origin: .zero, size: UIDevice.Metrics.iPadPro97.size)
 let window = UIWindow(frame: frame)
