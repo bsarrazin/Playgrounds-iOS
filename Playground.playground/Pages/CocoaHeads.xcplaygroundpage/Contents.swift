@@ -1,35 +1,39 @@
-//: [Previous](@previous)
-
 import PlaygroundSupport
 import RxCocoa
 import RxSwift
 import UIKit
 
-UIDevice.Metrics.iPhone8Plus.size
-
-//let str = NSAttributedString(string: "")
-//let desiredWidth: CGFloat = 300
-//let boundingRect = CGSize(width: 300, height: CGFloat.greatestFiniteMagnitude)
-//let rect = str.boundingRect(with: boundingRect, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+extension UIButton {
+    static func make(title: String) -> UIButton {
+        let button = UIButton(type: .system)
+        button.backgroundColor = #colorLiteral(red: 1, green: 0.2745098039, blue: 0.3725490196, alpha: 1)
+        button.layer.cornerRadius = 5
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
+}
 
 class ViewController: UIViewController {
-    private let bag = DisposeBag()
-    private var button: UIButton!
+    
+    @IBOutlet private(set) var button: UIButton!
     
     convenience init() { self.init(nibName: nil, bundle: nil) }
     
     override func loadView() {
         super.loadView()
+        configureView()
+        configureButton()
+    }
+    
+    private func configureView() {
         view.bounds = CGRect(origin: .zero, size: UIDevice.Metrics.iPhoneX.size)
         view.backgroundColor = .white
-        
-        button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("FOO", for: .normal)
-        button.rx.tap
-            .subscribe(onNext: { print("tap") })
-            .disposed(by: bag)
-        
+    }
+    
+    private func configureButton() {
+        button = UIButton.make(title: "Tap Me!")
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 30),
@@ -39,6 +43,14 @@ class ViewController: UIViewController {
         ])
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        button.addTarget(self, action: #selector(foo(_:)), for: .touchUpInside)
+    }
+    
+    @IBAction func foo(_ sender: UIButton!) {
+        print("foo")
+    }
 }
 
 let viewController = ViewController()
