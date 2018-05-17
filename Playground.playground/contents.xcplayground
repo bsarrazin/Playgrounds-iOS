@@ -13,6 +13,7 @@
         <page name='Loggable'/>
         <page name='Mapping'/>
         <page name='Method Dispatch'/>
+        <page name='Namespacing'/>
         <page name='Operation Queues'/>
         <page name='Rx'/>
         <page name='Tinder Card'/>
