@@ -17,7 +17,9 @@
         <page name='Operation Queues'/>
         <page name='Rx'/>
         <page name='Tinder Card'/>
+        <page name='Type Erasure'/>
         <page name='View Model'/>
         <page name='CocoaHeads'/>
+        <page name='Play'/>
     </pages>
 </playground>
