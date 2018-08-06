@@ -1,5 +1,6 @@
 import Alamofire
 import PlaygroundSupport
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -243,3 +244,18 @@ xexample("PublishSubject") { _ in
     subject.onNext(7)
     subject.onNext(8)
 }
+
+
+let textField1 = UITextField()
+let textField2 = UITextField()
+let button = UIButton()
+let bag = DisposeBag()
+
+let text = Observable.combineLatest(textField1.rx.text, textField2.rx.text)
+button.rx.tap
+    .withLatestFrom(text)
+    .subscribe(onNext: { (str1, str2) in
+        print(str1)
+        print(str2)
+    })
+    .disposed(by: bag)

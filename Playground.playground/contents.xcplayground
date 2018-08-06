@@ -16,10 +16,17 @@
         <page name='Namespacing'/>
         <page name='Operation Queues'/>
         <page name='Rx'/>
+        <page name='Setting Store'/>
         <page name='Tinder Card'/>
         <page name='Type Erasure'/>
         <page name='View Model'/>
         <page name='CocoaHeads'/>
         <page name='Play'/>
+        <page name='Cribbage'/>
+        <page name='Linked List'/>
+        <page name='Binary Tree'/>
+        <page name='Fibonacci'/>
+        <page name='StackOverflow'/>
+        <page name='RxMVVM'/>
     </pages>
 </playground>

@@ -23,5 +23,10 @@ public extension UIDevice {
             case .iPadPro129: return CGSize(width: 1024, height: 1366)
             }
         }
+        
+        public var rect: CGRect {
+            let point: CGPoint = .zero
+            return CGRect(origin: point, size: size)
+        }
     }
 }

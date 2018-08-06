@@ -21,8 +21,8 @@
  - the table is consulted **at runtime** to determine which method to run
  ```swift
  class ParentClass {
- func method1() {}
- func method2() {}
+    func method1() {}
+    func method2() {}
  }
  
  +-------+-------------+
@@ -32,8 +32,8 @@
  | 0x122 | method2     |
  
  class ChildClass: ParentClass {
- override func method1() {}
- func method3() {}
+    override func method1() {}
+    func method3() {}
  }
  
  +-------+-------------+
@@ -53,13 +53,13 @@
  - runtime will crawl the class hierarchy to determine which method to invoke
  ```swift
  class ParentClass {
- dynamic func method1() {}
- dynamic func method2() {}
+    dynamic func method1() {}
+    dynamic func method2() {}
  }
  
  class ChildClass: ParentClass {
- override func method1() {}
- dynamic func method3() {}
+     override func method1() {}
+     dynamic func method3() {}
  }
  
  +-------+-------------+
@@ -68,10 +68,10 @@
  |       | super       |  |
  | 0x121 | method1     |  |  +-------+-------------+
  | 0x122 | method2     |  |  |       | ChildClass  |
- |  +-------+-------------+
- |--|       | super       |
- | 0x222 | method2     |
- | 0x223 | method3     |
+                          |  +-------+-------------+
+                          |--|       | super       |
+                             | 0x222 | method2     |
+                             | 0x223 | method3     |
  ```
  */
 
@@ -80,8 +80,8 @@ import UIKit
 /*:
  ## Location Matters
  ```
- +---------------------+-----------+
- | Initial Declaration | Extension |
+                     +---------------------+-----------+
+                     | Initial Declaration | Extension |
  +-------------------+---------------------+-----------+
  | Value Type        | Direct              | Direct    |
  +-------------------+---------------------+-----------+
@@ -167,10 +167,12 @@ class SubclassSpecifiedDispatchBehaviour: SpecifiedDispatchBehaviour {
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In",
-                                                            style: .plain,
-                                                            target: nil,
-                                                            action: #selector(ViewController.signInAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Sign In",
+            style: .plain,
+            target: nil,
+            action: #selector(ViewController.signInAction)
+        )
     }
     
     // Because of the optimization done by Swift (no subclass forces direct dispatch)
@@ -181,8 +183,8 @@ class ViewController: UIViewController {
 /*:
  ## In Summary
  ```
- +----------------------+---------------------+-----------------------------+
- | Direct               | Table               | Message                     |
+               +----------------------+---------------------+-----------------------------+
+               | Direct               | Table               | Message                     |
  +-------------+----------------------+---------------------+-----------------------------+
  | NSObject    | @nonobjc OR final    | Initial Declaration | Extensions AND dynamic      |
  +-------------+----------------------+---------------------+-----------------------------+

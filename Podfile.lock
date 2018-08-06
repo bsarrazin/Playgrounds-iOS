@@ -1,33 +1,71 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.7.3)
+  - BuildingBlocks/Containers (0.0.1)
+  - BuildingBlocks/FoundationExtensions (0.0.1)
+  - BuildingBlocks/Loggable (0.0.1):
+    - SwiftyBeaver
+  - BuildingBlocks/MVVM (0.0.1)
+  - BuildingBlocks/Result (0.0.1)
+  - BuildingBlocks/RxExtensions (0.0.1):
+    - RxCocoa (~> 4.2)
+    - RxSwift
+  - BuildingBlocks/StateMachine (0.0.1):
+    - BuildingBlocks/SubscriptionStore
+  - BuildingBlocks/SubscriptionStore (0.0.1):
+    - BuildingBlocks/Containers
+  - BuildingBlocks/Sugar (0.0.1)
+  - BuildingBlocks/UIKitExtensions (0.0.1)
   - PathKit (0.8.0)
-  - RxCocoa (4.1.2):
+  - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
+  - RxSwift (4.2.0)
   - Stencil (0.11.0):
     - PathKit (~> 0.8.0)
+  - SwiftyBeaver (1.6.0)
 
 DEPENDENCIES:
   - Alamofire
+  - "BuildingBlocks/Containers (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/FoundationExtensions (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/Loggable (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/MVVM (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/Result (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/RxExtensions (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/StateMachine (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/SubscriptionStore (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/Sugar (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
+  - "BuildingBlocks/UIKitExtensions (from `git@github.com:bsarrazin/ios.BuildingBlocks`)"
   - RxCocoa
   - RxSwift
   - Stencil
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - PathKit
     - RxCocoa
     - RxSwift
     - Stencil
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  BuildingBlocks:
+    :git: "git@github.com:bsarrazin/ios.BuildingBlocks"
+
+CHECKOUT OPTIONS:
+  BuildingBlocks:
+    :commit: 4be6054b5eac82bd96cc27cf318effd626665bd8
+    :git: "git@github.com:bsarrazin/ios.BuildingBlocks"
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BuildingBlocks: 2e5822a576dcc48fd23bd628d5172b6a02dc264b
   PathKit: dcab05d701474011aae0e40cf892298a831f63d6
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   Stencil: a1873ecd92cbc053c6b391de7583b9f5bfbb3de6
+  SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
 
-PODFILE CHECKSUM: f71fc3908fe0a891d9df446437e497a4bf971715
+PODFILE CHECKSUM: 0782eba999579d305a7c07991e3130f5f405c3a0
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
