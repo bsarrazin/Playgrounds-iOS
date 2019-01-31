@@ -1,4 +1,4 @@
-import BuildingBlocks
+import FoundationKit
 import Foundation
 import PlaygroundSupport
 import RxCocoa
@@ -110,7 +110,7 @@ class FooView: UIView {
         tableView.backgroundColor = .clear
 
         addSubview(tableView)
-        sendSubview(toBack: tableView)
+        sendSubviewToBack(tableView)
     }
 
     private func makeTitleLabel() {

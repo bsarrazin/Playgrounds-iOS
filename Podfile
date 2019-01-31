@@ -1,26 +1,30 @@
 inhibit_all_warnings!
-platform :ios, '11.3'
+platform :ios, '12.1'
 
-bb_options = {
-  git: 'git@github.com:bsarrazin/ios.BuildingBlocks'
+fk_options = {
+  git: 'git@github.com:bsarrazin/io.srz.FoundationKit.ios'
 }
 
 target 'Playground' do
   use_frameworks!
+
   pod 'Alamofire'
-  pod 'BuildingBlocks/Containers', bb_options
-  pod 'BuildingBlocks/FoundationExtensions', bb_options
-  pod 'BuildingBlocks/Loggable', bb_options
-  pod 'BuildingBlocks/MVVM', bb_options
-  pod 'BuildingBlocks/RxExtensions', bb_options
-  pod 'BuildingBlocks/Sugar', bb_options
-  pod 'BuildingBlocks/Result', bb_options
-  pod 'BuildingBlocks/StateMachine', bb_options
-  pod 'BuildingBlocks/SubscriptionStore', bb_options
-  pod 'BuildingBlocks/UIKitExtensions', bb_options
   pod 'RxCocoa'
   pod 'RxSwift'
   pod 'Stencil'
+
+  pod 'FoundationKit/Containers', fk_options
+  pod 'FoundationKit/FoundationExtensions', fk_options
+  pod 'FoundationKit/Loggable', fk_options
+  pod 'FoundationKit/MVVM', fk_options
+  pod 'FoundationKit/Result', fk_options
+  pod 'FoundationKit/RxExtensions', fk_options
+  pod 'FoundationKit/StateMachine', fk_options
+  pod 'FoundationKit/SubscriptionStore', fk_options
+  pod 'FoundationKit/Sugar', fk_options
+  pod 'FoundationKit/UIKitExtensions', fk_options
+
+
 end
 
 # Workaround for Cocoapods issue #7606

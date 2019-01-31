@@ -1,3 +1,5 @@
+import XCTest
+
 /*:
  # Cloak
  - Generic wrapper type - concept from Haskell (called Newtype)
