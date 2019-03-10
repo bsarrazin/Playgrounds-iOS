@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B55E4C5F2235AD9A00DB9B03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C5E2235AD9A00DB9B03 /* AppDelegate.swift */; };
-		B55E4C612235AD9A00DB9B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C602235AD9A00DB9B03 /* ViewController.swift */; };
+		B55E4C612235AD9A00DB9B03 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C602235AD9A00DB9B03 /* ContactsViewController.swift */; };
 		B55E4C642235AD9A00DB9B03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55E4C622235AD9A00DB9B03 /* Main.storyboard */; };
 		B55E4C662235AD9B00DB9B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55E4C652235AD9B00DB9B03 /* Assets.xcassets */; };
 		B55E4C692235AD9B00DB9B03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55E4C672235AD9B00DB9B03 /* LaunchScreen.storyboard */; };
+		B55E4C742235B1FE00DB9B03 /* UIResponder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C732235B1FE00DB9B03 /* UIResponder+Extensions.swift */; };
+		B55E4C762235B2A300DB9B03 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C752235B2A300DB9B03 /* HistoryViewController.swift */; };
+		B55E4C782235B32900DB9B03 /* ContactsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C772235B32900DB9B03 /* ContactsNavigationController.swift */; };
+		B55E4C7A2235B34900DB9B03 /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C792235B34900DB9B03 /* HistoryNavigationController.swift */; };
+		B55E4C7C2235B35700DB9B03 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C7B2235B35700DB9B03 /* TabBarController.swift */; };
+		B55E4C7E2235B37200DB9B03 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C7D2235B37200DB9B03 /* RootNavigationController.swift */; };
+		B55E4C802235BAA100DB9B03 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E4C7F2235BAA100DB9B03 /* GreenViewController.swift */; };
 		B5FC2A882022197600A15513 /* Playground.h in Headers */ = {isa = PBXBuildFile; fileRef = B5FC2A862022197600A15513 /* Playground.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C36232B981DCF82813B28E0F /* Pods_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8D07AE0D985A55121E5A8 /* Pods_Playground.framework */; };
 /* End PBXBuildFile section */
@@ -22,11 +29,18 @@
 		99C8D07AE0D985A55121E5A8 /* Pods_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E4C5C2235AD9A00DB9B03 /* ResponderChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponderChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55E4C5E2235AD9A00DB9B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B55E4C602235AD9A00DB9B03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B55E4C602235AD9A00DB9B03 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		B55E4C632235AD9A00DB9B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B55E4C652235AD9B00DB9B03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B55E4C682235AD9B00DB9B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55E4C6A2235AD9B00DB9B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55E4C732235B1FE00DB9B03 /* UIResponder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extensions.swift"; sourceTree = "<group>"; };
+		B55E4C752235B2A300DB9B03 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		B55E4C772235B32900DB9B03 /* ContactsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsNavigationController.swift; sourceTree = "<group>"; };
+		B55E4C792235B34900DB9B03 /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
+		B55E4C7B2235B35700DB9B03 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B55E4C7D2235B37200DB9B03 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		B55E4C7F2235BAA100DB9B03 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		B5FC2A832022197600A15513 /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FC2A862022197600A15513 /* Playground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playground.h; sourceTree = "<group>"; };
 		B5FC2A872022197600A15513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				B55E4C5E2235AD9A00DB9B03 /* AppDelegate.swift */,
-				B55E4C602235AD9A00DB9B03 /* ViewController.swift */,
+				B55E4C712235B1E000DB9B03 /* Extensions */,
+				B55E4C722235B1EC00DB9B03 /* ViewControllers */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -94,6 +109,28 @@
 				B55E4C6A2235AD9B00DB9B03 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B55E4C712235B1E000DB9B03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B55E4C732235B1FE00DB9B03 /* UIResponder+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B55E4C722235B1EC00DB9B03 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B55E4C772235B32900DB9B03 /* ContactsNavigationController.swift */,
+				B55E4C602235AD9A00DB9B03 /* ContactsViewController.swift */,
+				B55E4C792235B34900DB9B03 /* HistoryNavigationController.swift */,
+				B55E4C752235B2A300DB9B03 /* HistoryViewController.swift */,
+				B55E4C7D2235B37200DB9B03 /* RootNavigationController.swift */,
+				B55E4C7B2235B35700DB9B03 /* TabBarController.swift */,
+				B55E4C7F2235BAA100DB9B03 /* GreenViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B5FC2A792022197600A15513 = {
@@ -274,8 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55E4C612235AD9A00DB9B03 /* ViewController.swift in Sources */,
+				B55E4C802235BAA100DB9B03 /* GreenViewController.swift in Sources */,
+				B55E4C612235AD9A00DB9B03 /* ContactsViewController.swift in Sources */,
+				B55E4C7E2235B37200DB9B03 /* RootNavigationController.swift in Sources */,
+				B55E4C742235B1FE00DB9B03 /* UIResponder+Extensions.swift in Sources */,
+				B55E4C7A2235B34900DB9B03 /* HistoryNavigationController.swift in Sources */,
+				B55E4C782235B32900DB9B03 /* ContactsNavigationController.swift in Sources */,
+				B55E4C7C2235B35700DB9B03 /* TabBarController.swift in Sources */,
 				B55E4C5F2235AD9A00DB9B03 /* AppDelegate.swift in Sources */,
+				B55E4C762235B2A300DB9B03 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
