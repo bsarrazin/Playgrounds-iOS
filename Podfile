@@ -1,5 +1,5 @@
 inhibit_all_warnings!
-platform :ios, '12.1'
+platform :ios, '13.2'
 
 fk_options = {
   git: 'git@github.com:bsarrazin/io.srz.FoundationKit.ios'
@@ -23,8 +23,6 @@ target 'Playground' do
   pod 'FoundationKit/SubscriptionStore', fk_options
   pod 'FoundationKit/Sugar', fk_options
   pod 'FoundationKit/UIKitExtensions', fk_options
-
-
 end
 
 # Workaround for Cocoapods issue #7606

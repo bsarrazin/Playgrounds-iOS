@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.8.1)
+  - Alamofire (4.9.1)
   - FoundationKit/Containers (0.0.3)
   - FoundationKit/FoundationExtensions (0.0.3)
   - FoundationKit/Loggable (0.0.3)
@@ -15,11 +15,12 @@ PODS:
   - FoundationKit/Sugar (0.0.3)
   - FoundationKit/UIKitExtensions (0.0.3)
   - PathKit (0.9.2)
-  - RxAtomic (4.4.1)
-  - RxCocoa (4.4.1):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.1):
-    - RxAtomic (~> 4.4)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
   - Stencil (0.13.1):
     - PathKit (~> 0.9.0)
 
@@ -40,11 +41,11 @@ DEPENDENCIES:
   - Stencil
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - PathKit
-    - RxAtomic
     - RxCocoa
+    - RxRelay
     - RxSwift
     - Stencil
 
@@ -58,14 +59,14 @@ CHECKOUT OPTIONS:
     :git: "git@github.com:bsarrazin/io.srz.FoundationKit.ios"
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  FoundationKit: 3ff1a60b5e74d11f170d5439829f235169e71730
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FoundationKit: 48599639c09acc08ee6a718b91397db866bd30fa
   PathKit: 273f59a38e3218eb95abd9f6a61730a8bcfd2f06
-  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
-  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
-  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   Stencil: b5128a0a43ece9225db5cbd94d6569fe6fba609b
 
-PODFILE CHECKSUM: a37ca1a53a1e2fdd99baf973e89004bc56fbf3ba
+PODFILE CHECKSUM: b7dd066af127d5c7897d74f66a58a25d76fc5ff3
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

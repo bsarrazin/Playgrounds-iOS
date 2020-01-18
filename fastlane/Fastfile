@@ -1,12 +1,5 @@
-#
-#  Fastfile
-#
-#  Copyright (c) 2017 7swift IO. All rights reserved.
-#
-
 fastlane_require 'colorize'
-
-fastlane_version "2.79.0"
+fastlane_version "2.140.0"
 default_platform :ios
 
 platform :ios do
