@@ -29,5 +29,6 @@
         <page name='StackOverflow'/>
         <page name='RxMVVM'/>
         <page name='Theming'/>
+        <page name='Inverted Expectations'/>
     </pages>
 </playground>
