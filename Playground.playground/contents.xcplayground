@@ -5,6 +5,7 @@
         <page name='Behaviours'/>
         <page name='Cloak'/>
         <page name='Composite'/>
+        <page name='Countdown Timer'/>
         <page name='Fonts'/>
         <page name='Grand Central Dispatch'/>
         <page name='Lenses'/>
@@ -16,6 +17,7 @@
         <page name='Namespacing'/>
         <page name='Operation Queues'/>
         <page name='Rx'/>
+        <page name='Semantic Version'/>
         <page name='Setting Store'/>
         <page name='Tinder Card'/>
         <page name='Type Erasure'/>
