@@ -30,5 +30,6 @@
         <page name='RxMVVM'/>
         <page name='Theming'/>
         <page name='Inverted Expectations'/>
+        <page name='Capture Lists'/>
     </pages>
 </playground>
