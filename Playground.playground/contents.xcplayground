@@ -5,6 +5,7 @@
         <page name='Behaviours'/>
         <page name='Cloak'/>
         <page name='Composite'/>
+        <page name='Fonts'/>
         <page name='Grand Central Dispatch'/>
         <page name='Lenses'/>
         <page name='Loading HUD'/>
