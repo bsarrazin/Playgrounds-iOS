@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='raw' executeOnSourceChanges='false'>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
         <page name='Associated Objects'/>
         <page name='Behaviours'/>
+        <page name='Binary Tree'/>
+        <page name='Capture Lists'/>
         <page name='Cloak'/>
+        <page name='CocoaHeads'/>
         <page name='Composite'/>
         <page name='Countdown Timer'/>
+        <page name='Cribbage'/>
+        <page name='Fibonacci'/>
         <page name='Fonts'/>
         <page name='Grand Central Dispatch'/>
+        <page name='Inverted Expectations'/>
         <page name='Lenses'/>
+        <page name='Linked List'/>
         <page name='Loading HUD'/>
         <page name='Locale'/>
         <page name='Loggable'/>
@@ -17,22 +24,14 @@
         <page name='Namespacing'/>
         <page name='Operation Queues'/>
         <page name='Rx'/>
+        <page name='RxMVVM'/>
         <page name='Semantic Version'/>
         <page name='Setting Store'/>
+        <page name='StackOverflow'/>
+        <page name='Theming'/>
         <page name='Tinder Card'/>
         <page name='Type Erasure'/>
         <page name='UserNotifications'/>
         <page name='View Model'/>
-        <page name='CocoaHeads'/>
-        <page name='Play'/>
-        <page name='Cribbage'/>
-        <page name='Linked List'/>
-        <page name='Binary Tree'/>
-        <page name='Fibonacci'/>
-        <page name='StackOverflow'/>
-        <page name='RxMVVM'/>
-        <page name='Theming'/>
-        <page name='Inverted Expectations'/>
-        <page name='Capture Lists'/>
     </pages>
 </playground>
