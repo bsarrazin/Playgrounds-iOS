@@ -35,5 +35,6 @@
         <page name='UserNotifications'/>
         <page name='View Model'/>
         <page name='Play'/>
+        <page name='URLs'/>
     </pages>
 </playground>
