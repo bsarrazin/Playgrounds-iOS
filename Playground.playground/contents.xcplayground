@@ -24,6 +24,7 @@
         <page name='Method Dispatch'/>
         <page name='Namespacing'/>
         <page name='Operation Queues'/>
+        <page name='Partials'/>
         <page name='Rx'/>
         <page name='RxMVVM'/>
         <page name='Semantic Version'/>
