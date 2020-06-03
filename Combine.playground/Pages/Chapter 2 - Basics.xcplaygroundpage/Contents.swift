@@ -87,7 +87,7 @@ xexample(of: "assign(to:on:)") {
 
 xexample(of: "Custom Subscriber") {
 
-    final class IntSubscriber: Subscriber {
+    class IntSubscriber: Subscriber {
         typealias Input = Int
         typealias Failure = Never
 
