@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Chapter 1 - Definitions'/>
+        <page name='Chapter 2 - Basics'/>
+        <page name='Chapter 3 - Modifying Data'/>
+        <page name='Chapter 4 - Filtering DAta'/>
+        <page name='Chapter 5 - Combining Data'/>
+        <page name='Chapter 6'/>
+    </pages>
+</playground>
