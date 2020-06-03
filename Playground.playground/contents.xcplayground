@@ -25,6 +25,7 @@
         <page name='Namespacing'/>
         <page name='Operation Queues'/>
         <page name='Partials'/>
+        <page name='Rating Stars'/>
         <page name='Rx'/>
         <page name='RxMVVM'/>
         <page name='Semantic Version'/>
