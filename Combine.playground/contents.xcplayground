@@ -8,5 +8,7 @@
         <page name='Chapter 5 - Combining Data'/>
         <page name='Chapter 6 - Delay'/>
         <page name='Chapter 6 - Collect'/>
+        <page name='Chapter 6 - Debounce'/>
+        <page name='Chapter 6 - Timeout'/>
     </pages>
 </playground>
