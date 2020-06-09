@@ -10,5 +10,6 @@
         <page name='Chapter 6 - Collect'/>
         <page name='Chapter 6 - Debounce'/>
         <page name='Chapter 6 - Timeout'/>
+        <page name='Chapter 6 - Measuring Time'/>
     </pages>
 </playground>
