@@ -11,6 +11,7 @@
         <page name='Chapter 6 - Debounce'/>
         <page name='Chapter 6 - Timeout'/>
         <page name='Chapter 6 - Measuring Time'/>
+        <page name='Chapter 8 - Property Wrappers'/>
         <page name='Action Publisher'/>
     </pages>
 </playground>
