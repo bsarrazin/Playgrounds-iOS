@@ -12,6 +12,7 @@
         <page name='Chapter 6 - Timeout'/>
         <page name='Chapter 6 - Measuring Time'/>
         <page name='Chapter 8 - Property Wrappers'/>
+        <page name='Chapter 9 - Networking'/>
         <page name='Action Publisher'/>
     </pages>
 </playground>
