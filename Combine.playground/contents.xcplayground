@@ -15,6 +15,7 @@
         <page name='Chapter 9 - Networking'/>
         <page name='Chapter 10 -Debugging'/>
         <page name='Chapter 11 - Timers'/>
+        <page name='Chapter 12 - KVO'/>
         <page name='Action Publisher'/>
     </pages>
 </playground>
