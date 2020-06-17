@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
+        <page name='Action Publisher'/>
         <page name='Chapter 1 - Definitions'/>
         <page name='Chapter 2 - Basics'/>
         <page name='Chapter 3 - Modifying Data'/>
@@ -20,6 +21,5 @@
         <page name='Chapter 13 - Multicast'/>
         <page name='Chapter 13 - Future'/>
         <page name='Chapter 14 - Hacker News'/>
-        <page name='Action Publisher'/>
     </pages>
 </playground>
