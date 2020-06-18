@@ -2,6 +2,7 @@
 <playground version='6.0' target-platform='ios' display-mode='raw'>
     <pages>
         <page name='Action Publisher'/>
+        <page name='Play'/>
         <page name='Chapter 1 - Definitions'/>
         <page name='Chapter 2 - Basics'/>
         <page name='Chapter 3 - Modifying Data'/>
