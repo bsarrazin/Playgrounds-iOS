@@ -14,6 +14,29 @@ public struct API {
         self.maxStories = maxStories
     }
 
+    public func stories() -> AnyPublisher<[Story], Error> {
+        URLSession.shared
+            .dataTaskPublisher(for: Endpoint.stories.url)
+            .map(\.data)
+            .decode(type: [Int].self, decoder: decoder)
+            .mapError { error -> API.Error in
+                switch error {
+                case is URLError:
+                    return .addressUnreachable(Endpoint.stories.url)
+                default:
+                    return .invalidResponse
+                }
+            }
+            .filter { !$0.isEmpty }
+            .flatMap { ids in
+                return self.mergedStories(ids: ids)
+            }
+            .scan([]) { stories, story -> [Story] in
+                return stories + [story]
+            }
+            .map { $0.sorted() }
+            .eraseToAnyPublisher()
+    }
     public func story(id: Int) -> AnyPublisher<Story, Error> {
         URLSession.shared
             .dataTaskPublisher(for: Endpoint.story(id).url)
@@ -23,7 +46,7 @@ public struct API {
             .catch { _ in Empty<Story, Error>() }
             .eraseToAnyPublisher()
     }
-    public func mergeStories(ids: [Int]) -> AnyPublisher<Story, Error> {
+    public func mergedStories(ids: [Int]) -> AnyPublisher<Story, Error> {
         let identifiers = Array(ids.prefix(maxStories))
 
         precondition(!identifiers.isEmpty)
