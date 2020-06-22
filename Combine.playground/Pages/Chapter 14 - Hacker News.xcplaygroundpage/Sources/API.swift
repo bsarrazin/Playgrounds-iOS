@@ -28,9 +28,7 @@ public struct API {
                 }
             }
             .filter { !$0.isEmpty }
-            .flatMap { ids in
-                return self.mergedStories(ids: ids)
-            }
+            .flatMap { self.mergedStories(ids: $0) }
             .scan([]) { stories, story -> [Story] in
                 return stories + [story]
             }
