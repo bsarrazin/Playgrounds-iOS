@@ -31,3 +31,6 @@ class ViewModel {
         }
     }
 }
+
+// Can you spot the problem?
+// How would you fix it?
