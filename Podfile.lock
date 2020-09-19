@@ -26,16 +26,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - "FoundationKit/Containers (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/FoundationExtensions (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/Loggable (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/MVVM (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/Result (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/RxExtensions (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/StateMachine (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/SubscriptionStore (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/Sugar (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
-  - "FoundationKit/UIKitExtensions (from `git@github.com:bsarrazin/io.srz.FoundationKit.ios`)"
+  - "FoundationKit/Containers (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/FoundationExtensions (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/Loggable (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/MVVM (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/Result (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/RxExtensions (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/StateMachine (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/SubscriptionStore (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/Sugar (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
+  - "FoundationKit/UIKitExtensions (from `git@github.com:bsarrazin/FoundationKit-iOS`)"
   - RxCocoa
   - RxSwift
   - Stencil
@@ -51,12 +51,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   FoundationKit:
-    :git: "git@github.com:bsarrazin/io.srz.FoundationKit.ios"
+    :git: "git@github.com:bsarrazin/FoundationKit-iOS"
 
 CHECKOUT OPTIONS:
   FoundationKit:
     :commit: 16afb344ab834611ad002793c718ead27b49cc04
-    :git: "git@github.com:bsarrazin/io.srz.FoundationKit.ios"
+    :git: "git@github.com:bsarrazin/FoundationKit-iOS"
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   Stencil: b5128a0a43ece9225db5cbd94d6569fe6fba609b
 
-PODFILE CHECKSUM: b7dd066af127d5c7897d74f66a58a25d76fc5ff3
+PODFILE CHECKSUM: c5cc7d91f6f2af57834ccb8360d56eff52b83cdc
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

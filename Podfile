@@ -1,8 +1,8 @@
 inhibit_all_warnings!
-platform :ios, '13.2'
+platform :ios, '13.7'
 
 fk_options = {
-  git: 'git@github.com:bsarrazin/io.srz.FoundationKit.ios'
+  git: 'git@github.com:bsarrazin/FoundationKit-iOS'
 }
 
 target 'Playground' do
@@ -23,12 +23,4 @@ target 'Playground' do
   pod 'FoundationKit/SubscriptionStore', fk_options
   pod 'FoundationKit/Sugar', fk_options
   pod 'FoundationKit/UIKitExtensions', fk_options
-end
-
-# Workaround for Cocoapods issue #7606
-post_install do |installer|
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings.delete('CODE_SIGNING_ALLOWED')
-    config.build_settings.delete('CODE_SIGNING_REQUIRED')
-  end
 end
