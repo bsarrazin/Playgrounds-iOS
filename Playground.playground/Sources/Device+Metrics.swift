@@ -1,6 +1,6 @@
 import UIKit
 
-public extension UIDevice {
+extension UIDevice {
     public enum Metrics {
         case iPhone4
         case iPhoneSE

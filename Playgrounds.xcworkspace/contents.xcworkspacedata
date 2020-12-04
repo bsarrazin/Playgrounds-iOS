@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Combine.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Interview.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Playground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Unsafe.playground">
+   </FileRef>
+</Workspace>
