@@ -5,6 +5,9 @@
       location = "group:Combine.playground">
    </FileRef>
    <FileRef
+      location = "group:Examples.playground">
+   </FileRef>
+   <FileRef
       location = "group:Interview.playground">
    </FileRef>
    <FileRef
