@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MobileShieldKit",
+        "repositoryURL": "git@github.com:gdcorp-mobile/Kasada-iOS.git",
+        "state": {
+          "branch": "main",
+          "revision": "f82915b9194869c1eff43814d5e3431cae8b1b0b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
