@@ -6,36 +6,47 @@ var subscriptions: Set<AnyCancellable> = []
 xexample(of: "Collect") {
     ["A", "B", "C", "D", "E"]
         .publisher
-        .collect(2)
+        .collect(3)
         .sink(
             receiveCompletion: { print("Received completion:", $0) },
             receiveValue: { print("Received value:", $0) }
         )
         .store(in: &subscriptions)
+
+    // Examples:
+    // - batching 100 logs, then send it remotely
 }
 
 xexample(of: "Mapping") {
     let formatter = NumberFormatter()
     formatter.numberStyle = .spellOut
 
-    [123, 4, 56]
+    ["123", "42", "99"]
         .publisher
-        .compactMap { formatter.string(from: $0) }
+        .map { Int($0) }
+        .filter { $0 != nil }
+        .replaceNil(with: -1)
         .sink { print($0) }
         .store(in: &subscriptions)
+
+    // Examples:
+    // - messages into table cell view models
 }
 
 xexample(of: "Mapping Key Paths") {
     let subject: PassthroughSubject<Coordinate, Never> = .init()
 
     subject
-        .map(\.x, \.y)
+        .map(\.x, \.y) // Up to 3
         .sink { x, y in print("The coordinate at \(x), \(y) is in quandrant", quadrantOf(x: x, y: y)) }
         .store(in: &subscriptions)
 
     subject.send(Coordinate(x: 10, y: -8))
     subject.send(Coordinate(x: -10, y: -8))
     subject.send(Coordinate(x: 0, y: 0))
+
+    // Examples:
+    // - view model property to assign to label.text
 }
 
 xexample(of: "tryMap") {
@@ -49,47 +60,63 @@ xexample(of: "tryMap") {
 }
 
 xexample(of: "Flat Mapping") {
-    let foo = Chatter(name: "Foo", message: "Hey, I'm Foo!")
-    let bar = Chatter(name: "Bar", message: "Hi, I'm Bar!")
+    func decode(_ codes: [Int]) -> AnyPublisher<String, Never> {
+        return Just(
+            codes.compactMap { code in
+                guard (32...255).contains(code) else { return nil }
+                return String(UnicodeScalar(code) ?? " ")
+            }
+            .joined()
+        ).eraseToAnyPublisher()
+    }
+
+    [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33].publisher
+        .collect()
+        .flatMap(decode)
+        .sink { print($0) }
+        .store(in: &subscriptions)
+}
+
+xexample(of: "Slightly More Complex Flat Mapping") {
+    let foo = Chatter(name: "Foo", message: "Foo: Hey, I'm Foo!")
+    let bar = Chatter(name: "Bar", message: "Bar: Hi, I'm Bar!")
 
     let chat: CurrentValueSubject<Chatter, Never> = .init(foo)
 
     chat
-        .flatMap(maxPublishers: .max(2)) { $0.message} // private convo between the first 2
+        .flatMap(maxPublishers: .max(2)) { $0.message } // ✌️ .max(2) makes this a chat with max of 2 people, `Foo` was already added in the init
         .sink { print($0) }
         .store(in: &subscriptions)
 
     foo.message.value = "Foo: How's it going?"
 
-    chat.value = bar
+    chat.value = bar // ✅ adding `Bar` to the chat
 
     bar.message.value = "Bar: Pretty good, how about you?"
 
-    let baz = Chatter(name: "Baz", message: "Hello! I'm Baz!")
+    let baz = Chatter(name: "Baz", message: "Baz: Hello! I'm Baz!")
+    chat.value = baz // ❌ unable to add `Baz` to the chat
 
-    chat.value = baz
+    foo.message.value = "Foo: Hey Baz! Welcome to the chat!"
 
-    foo.message.value = "Hey Baz! Welcome to the chat!"
-    bar.message.value = "Welcome, Baz!"
+    bar.message.value = "Bar: Welcome, Baz!"
 
-    baz.message.value = "Awww thanks guys!"
+    baz.message.value = "Baz: Awww thanks guys!"
+    baz.message.value = "Baz: So is it cold here or what?"
 
-    chat.value = foo // Added to chat a second time, messages will be duplicated
-
-    baz.message.value = "So it's it cold here or what?"
-    foo.message.value = "brrrrr"
+    foo.message.value = "Foo: brrrrr"
 }
 
-xexample(of: "replaceNil(with:)") {
-    ["A", nil, "C"]
+example(of: "replaceNil(with:)") {
+    [nil, nil, nil]
         .publisher
-        .replaceNil(with: "B")
-        .compactMap { $0 }
+        .replaceEmpty(with: -1)
+//        .replaceNil(with: "B")
         .sink { print("Received value:", $0) }
         .store(in: &subscriptions)
 }
 
-xexample(of: "replaceEmpty(with:)") {
+example(of: "replaceEmpty(with:)") {
     let empty: Empty<Int, Never> = .init()
 
     empty
@@ -98,21 +125,32 @@ xexample(of: "replaceEmpty(with:)") {
         .store(in: &subscriptions)
 }
 
+xexample(of: "replaceEmpty(with:)") {
+    let subject = PassthroughSubject<Int, Never>()
+
+    subject
+        .replaceEmpty(with: 42)
+        .sink { print("Received value: \($0)") }
+        .store(in: &subscriptions)
+
+    subject.send(completion: .finished)
+}
+
 xexample(of: "scan(_:_:)") {
     var delta: Int { .random(in: -10...10) }
-    let publisher = (0..<22)
+    let days = (0..<10)
         .map { _ in delta }
         .publisher
 
-    publisher
-        .scan(50) { latest, current in
+    days
+        .scan(100) { latest, current in
             max(0, latest + current)
         }
         .sink { print("Received value:", $0) }
         .store(in: &subscriptions)
 }
 
-example(of: "Challenge") {
+xexample(of: "Challenge") {
     let contacts = [
         "603-555-1234": "Florent",
         "408-555-4321": "Marin",

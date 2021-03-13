@@ -1,28 +1,36 @@
 import Combine
 import Foundation
 
-// Under the covers...
-//
-// Publisher                                Subscriber
-//     |                                         |
-//     |
-//     | <--------- subscribes        ---------- 1
-//     |
-//                                               |
-//     2 ---------- give subscription ---------> |
-//                                               |
-//     |
-//     | <--------- requests values   ---------- 3
-//     |
-//                                               |
-//     4 ---------- sends values      ---------> |
-//                                               |
-//     |                                         |
-//                                               |
-//     5 ---------- sends completion  ---------> |
-//                                               |
-//     |                                         |
-//     V                                         V
+/*
+ Under the covers...
+
+ Publisher                                Subscriber
+     |                                         |
+     |
+     | <--------- subscribes        ---------- 1
+     |
+                                               |
+     2 ---------- give subscription ---------> |
+                                               |
+     |
+     | <--------- requests values   ---------- 3
+     |
+                                               |
+     4 ---------- sends values      ---------> |
+                                               |
+     |                                         |
+                                               |
+     5 ---------- sends completion  ---------> |
+                                               |
+     |                                         |
+     V                                         V
+
+ 1. the subscriber subscribes to the publisher
+ 2. the publisher creates a subscription and gives it to the subscriber
+ 3. the subscriber requests values
+ 4. the publisher sends values
+ 5. the publisher sends a completion (or error)
+ */
 
 xexample(of: "Classic") {
     let center: NotificationCenter = .default
@@ -96,7 +104,7 @@ xexample(of: "Custom Subscriber") {
         }
         func receive(_ input: Int) -> Subscribers.Demand {
             print("Received value:", input)
-            return .max(1)
+            return .none
         }
         func receive(completion: Subscribers.Completion<Never>) {
             print("Received completion:", completion)
@@ -104,7 +112,7 @@ xexample(of: "Custom Subscriber") {
     }
 
     let subscriber = IntSubscriber()
-    let publisher = (1...6).publisher
+    let publisher = (1...3).publisher
     publisher.subscribe(subscriber)
 }
 
@@ -207,7 +215,7 @@ xexample(of: "CurrentValueSubejct") {
     subject.send(completion: .finished)
 }
 
-xexample(of: "Dynamically adjusting demand") {
+example(of: "Dynamically adjusting demand") {
     final class IntSubscriber: Subscriber {
         typealias Input = Int
         typealias Failure = Never
@@ -243,7 +251,7 @@ xexample(of: "Dynamically adjusting demand") {
 
 xexample(of: "Type Erasure") {
     let subject: PassthroughSubject<Int, Never> = .init()
-    let publisher = subject.eraseToAnyPublisher()
+    let publisher: AnyPublisher<Int, Never> = subject.eraseToAnyPublisher()
 
     publisher
         .sink { print("int:", $0) }
