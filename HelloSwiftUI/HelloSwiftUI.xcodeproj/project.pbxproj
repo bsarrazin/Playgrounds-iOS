@@ -10,6 +10,7 @@
 		D10A51F22600E0FD00B0F8A6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A51F12600E0FD00B0F8A6 /* MapViewController.swift */; };
 		D10A51F72600E12200B0F8A6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A51F62600E12200B0F8A6 /* MapView.swift */; };
 		D10A51FC2600E35600B0F8A6 /* CloseUpMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A51FB2600E35600B0F8A6 /* CloseUpMapView.swift */; };
+		D10A52042600F75100B0F8A6 /* GridNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A52032600F75100B0F8A6 /* GridNavigationView.swift */; };
 		D16A065E25FD5A7800D1BC3D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A065D25FD5A7800D1BC3D /* App.swift */; };
 		D16A066025FD5A7800D1BC3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A065F25FD5A7800D1BC3D /* ContentView.swift */; };
 		D16A066225FD5A7900D1BC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A066125FD5A7900D1BC3D /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		D10A51F12600E0FD00B0F8A6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D10A51F62600E12200B0F8A6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D10A51FB2600E35600B0F8A6 /* CloseUpMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseUpMapView.swift; sourceTree = "<group>"; };
+		D10A52032600F75100B0F8A6 /* GridNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridNavigationView.swift; sourceTree = "<group>"; };
 		D16A065A25FD5A7800D1BC3D /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A065D25FD5A7800D1BC3D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D16A065F25FD5A7800D1BC3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		D16A069425FE7E1100D1BC3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D10A52032600F75100B0F8A6 /* GridNavigationView.swift */,
 				D10A51FB2600E35600B0F8A6 /* CloseUpMapView.swift */,
 				D16A0714260037B300D1BC3D /* ConfirmView.swift */,
 				D16A065F25FD5A7800D1BC3D /* ContentView.swift */,
@@ -366,6 +369,7 @@
 				D16A06B825FE80B700D1BC3D /* RatingView.swift in Sources */,
 				D16A069625FE7E3500D1BC3D /* MenuListView.swift in Sources */,
 				D16A06D125FE81E500D1BC3D /* TitleView.swift in Sources */,
+				D10A52042600F75100B0F8A6 /* GridNavigationView.swift in Sources */,
 				D16A06B325FE806F00D1BC3D /* MenuItemView.swift in Sources */,
 				D16A06D625FE82CD00D1BC3D /* HistoryListView.swift in Sources */,
 				D10A51F22600E0FD00B0F8A6 /* MapViewController.swift in Sources */,
