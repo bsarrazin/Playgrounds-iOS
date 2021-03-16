@@ -3,16 +3,17 @@ import SwiftUI
 /// A `View`for entering in an order. Takes basic information about the order from `menuItem`
 struct MenuDetailView: View {
 
+    let sizes: [Size] = [.small, .medium, .large]
     @EnvironmentObject var settings: UserPreferences
     @ObservedObject var orderModel: OrderModel
     @State var didOrder: Bool = false
+    @State var quantity: Int = 1
 
     var menuItem: MenuItem
     var formattedPrice: String {
-        String(format:"%3.2f",menuItem.price)
+        String(format:"%3.2f", menuItem.price * Double(quantity) * settings.size.rawValue)
     }
     func addItem() {
-//        orderModel.add(menuID: menuItem.id)
         didOrder = true
     }
 
@@ -29,19 +30,20 @@ struct MenuDetailView: View {
                 .layoutPriority(3)
 
             Spacer()
-            HStack{
-                Spacer()
-                Text("Pizza size")
-                Text(settings.size.formatted())
+
+            Picker(selection: $settings.size, label: Text("Pizza Size")) {
+                ForEach(sizes, id: \.self) { size in
+                    Text(size.formatted())
+                        .tag(size)
+                }
             }
-            .font(.headline)
-            HStack{
-                Text("Quantity:")
-                Text("1")
+            .pickerStyle(SegmentedPickerStyle())
+
+            Stepper(value: $quantity, in: 1...10) {
+                Text("Quantity: \(quantity)")
                     .bold()
-                Spacer()
             }
-            .padding()
+
             HStack{
                 Text("Order:  \(formattedPrice)")
                     .font(.headline)
@@ -50,6 +52,7 @@ struct MenuDetailView: View {
                     .font(.headline)
             }
             .padding()
+
             HStack{
                 Spacer()
                 Button(action: addItem) {
@@ -65,12 +68,15 @@ struct MenuDetailView: View {
                     ConfirmView(
                         menuID: menuItem.id,
                         orderModel: orderModel,
-                        isPresented: $didOrder
+                        isPresented: $didOrder,
+                        quantity: $quantity,
+                        size: $settings.size
                     )
                 }
                 Spacer()
             }
             .padding(.top)
+
             Spacer()
         }
         
