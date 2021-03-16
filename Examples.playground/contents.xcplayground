@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true'>
     <pages>
-        <page name='Sorting TableView'/>
-        <page name='XCTesting'/>
-        <page name='URL Handling'/>
-        <page name='Play'/>
-        <page name='Playground'/>
         <page name='Action Publisher'/>
         <page name='Dependency Injection'/>
+        <page name='Generating QR Code'/>
+        <page name='Sorting TableView'/>
+        <page name='URL Handling'/>
+        <page name='XCTesting'/>
+        <page name='Playground'/>
     </pages>
 </playground>
