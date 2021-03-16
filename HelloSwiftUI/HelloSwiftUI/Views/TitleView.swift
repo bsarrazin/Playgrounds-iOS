@@ -1,7 +1,10 @@
 import SwiftUI
 
+let staticFont: Font = .system(size: 22)
+
 struct TitleView: View {
 
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     var title: String
     var isDisplayingOrder: Bool! = nil
 
@@ -9,7 +12,7 @@ struct TitleView: View {
         HStack {
             Spacer()
             Text(title)
-                .font(.largeTitle)
+                .font(verticalSizeClass != .compact ? .largeTitle : staticFont)
                 .fontWeight(.heavy)
                 .padding(.trailing)
 
@@ -18,7 +21,7 @@ struct TitleView: View {
             Image(systemName: "chevron.up.square")
                 .rotationEffect(isDisplayingOrder ?? false ? Angle(degrees: 0) : Angle(degrees: 180))
                 .animation(.easeInOut(duration: 0.5))
-                .font(.title)
+                .font(verticalSizeClass != .compact ? .title : staticFont)
                 .foregroundColor(isDisplayingOrder != nil ? Color("G1") : .clear)
                 .padding(),
             alignment: .leading
@@ -33,6 +36,8 @@ struct TitleView_Previews: PreviewProvider {
         List {
             TitleView(title: "Order Pizza", isDisplayingOrder: false)
             TitleView(title: "Order Pizza", isDisplayingOrder: true)
+            TitleView(title: "Order Pizza", isDisplayingOrder: true)
+                .environment(\.verticalSizeClass, .compact)
         }
     }
 }
