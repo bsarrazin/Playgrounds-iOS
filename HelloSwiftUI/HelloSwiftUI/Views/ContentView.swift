@@ -10,7 +10,7 @@ struct ContentView: View {
             Button {
                 isMenuDisplayed.toggle()
             } label: {
-                TitleView(title: "Order Pizza")
+                TitleView(title: "Order Pizza", isDisplayingOrder: isMenuDisplayed)
             }
 
             MenuListView(orderModel: order)
@@ -18,6 +18,7 @@ struct ContentView: View {
 
             OrderListView(orderModel: order)
                 .layoutPriority(isMenuDisplayed ? 0.5 : 1)
+                .animation(.spring())
         }
         .padding()
     }

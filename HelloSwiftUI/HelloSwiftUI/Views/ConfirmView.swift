@@ -7,6 +7,8 @@ struct ConfirmView: View {
     @Binding var quantity: Int
     @Binding var size: Size
 
+    @State var comment: String = ""
+
     var name: String {
         orderModel.menu(menuID)?.name ?? ""
     }
@@ -27,22 +29,51 @@ struct ConfirmView: View {
 
             SelectedImageView(name: "\(menuID)_250w")
                 .padding(10)
+                // .onTapGesture(count: 2) {
+                //     isPresented = false
+                // }
+                .gesture(
+                    TapGesture(count: 2)
+                        .onEnded {
+                            isPresented = false
+                        }
+                )
 
             Divider()
 
             Text("Confirm your order of \(quantity) \(size.formatted()) \(name) pizza")
                 .font(.headline)
 
+            TextField("Add you comments here", text: $comment)
+                .background(Color.white)
+                .foregroundColor(.black)
+
             Spacer()
 
-            Button(action: addItem){
-                Text("Add")
-                    .font(.title)
-                    .padding()
-                    .background(Color("G4"))
-                    .cornerRadius(10)
+            HStack {
+                Button(action: addItem){
+                    Text("Add")
+                        .font(.title)
+                        .padding()
+                        .background(Color("G4"))
+                        .cornerRadius(10)
+                }
+                .padding([.bottom])
+
+                Spacer()
+
+                Button {
+                    isPresented = false
+                } label: {
+                    Text("Cancel")
+                        .font(.title)
+                        .padding()
+                        .background(Color("G4"))
+                        .cornerRadius(10)
+                }
+                .padding([.bottom])
             }
-            .padding([.bottom])
+            .padding()
         }
         .background(Color("G3"))
         .foregroundColor(Color("IP"))
@@ -52,6 +83,6 @@ struct ConfirmView: View {
 
 struct ConfirmView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmView(menuID: 1, orderModel: OrderModel(), isPresented: .constant(true), quantity: .constant(6), size: .constant(.medium))
+        ConfirmView(menuID: 1, orderModel: OrderModel(), isPresented: .constant(true), quantity: .constant(6), size: .constant(.medium), comment: "foo bar")
     }
 }

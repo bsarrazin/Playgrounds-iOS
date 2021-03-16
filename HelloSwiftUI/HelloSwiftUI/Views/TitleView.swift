@@ -3,7 +3,7 @@ import SwiftUI
 struct TitleView: View {
 
     var title: String
-    var isDisplayingOrder: Bool = false
+    var isDisplayingOrder: Bool! = nil
 
     var body: some View {
         HStack {
@@ -13,9 +13,13 @@ struct TitleView: View {
                 .fontWeight(.heavy)
                 .padding(.trailing)
 
-        }.overlay(
-            Image(systemName: isDisplayingOrder ? "chevron.up.square" : "chevron.down.square")
+        }
+        .overlay(
+            Image(systemName: "chevron.up.square")
+                .rotationEffect(isDisplayingOrder ?? false ? Angle(degrees: 0) : Angle(degrees: 180))
+                .animation(.easeInOut(duration: 0.5))
                 .font(.title)
+                .foregroundColor(isDisplayingOrder != nil ? Color("G1") : .clear)
                 .padding(),
             alignment: .leading
         )

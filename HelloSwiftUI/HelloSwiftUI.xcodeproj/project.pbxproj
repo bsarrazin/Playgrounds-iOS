@@ -136,7 +136,6 @@
 				D16A06C225FE812C00D1BC3D /* Resources */,
 				D16A069425FE7E1100D1BC3D /* Views */,
 				D16A065D25FD5A7800D1BC3D /* App.swift */,
-				D16A065F25FD5A7800D1BC3D /* ContentView.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -163,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D16A0714260037B300D1BC3D /* ConfirmView.swift */,
+				D16A065F25FD5A7800D1BC3D /* ContentView.swift */,
 				D16A06A525FE7F8F00D1BC3D /* HeaderView.swift */,
 				D16A07042600308E00D1BC3D /* HistoryDetailView.swift */,
 				D16A06FF2600301600D1BC3D /* HistoryListItemView.swift */,

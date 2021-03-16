@@ -7,10 +7,19 @@ struct OrderListView: View {
     var body: some View {
         VStack {
             ListHeaderView(orderModel: orderModel, title: "Your Order")
-            List(orderModel.orders) { item in
-                OrderItemView(orderItem: item)
+            List {
+                Section(header: ListHeaderView(orderModel: orderModel, title: "Your Order")) {
+                    ForEach(orderModel.orders) { item in
+                        OrderItemView(orderItem: item)
+                    }
+                    .onDelete(perform: delete)
+                }
             }
         }
+    }
+
+    func delete(at offsets: IndexSet) {
+        orderModel.orders.remove(atOffsets: offsets)
     }
 }
 
