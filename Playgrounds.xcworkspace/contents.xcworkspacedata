@@ -17,6 +17,9 @@
       location = "group:PointFree.playground">
    </FileRef>
    <FileRef
+      location = "group:PropertyWrappers.playground">
+   </FileRef>
+   <FileRef
       location = "group:Unsafe.playground">
    </FileRef>
 </Workspace>

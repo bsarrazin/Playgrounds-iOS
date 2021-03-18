@@ -8,5 +8,6 @@
         <page name='URL Handling'/>
         <page name='XCTesting'/>
         <page name='Playground'/>
+        <page name='Property Wrappers'/>
     </pages>
 </playground>
