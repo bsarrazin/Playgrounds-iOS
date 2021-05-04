@@ -2,16 +2,11 @@ import Foundation
 
 precedencegroup ForwardApplication {
     associativity: left
+    higherThan: ForwardComposition
 }
 
 infix operator |>: ForwardApplication
 
-/// <#Description#>
-/// - Parameters:
-///   - a: <#a description#>
-///   - f: <#f description#>
-/// - Returns: <#description#>
-public func |> <A, B>(
-    a: A,
-    f: (A) -> B
-) -> B { f(a) }
+public func |> <Input, Output>(input: Input, transform: (Input) -> Output) -> Output {
+    return transform(input)
+}

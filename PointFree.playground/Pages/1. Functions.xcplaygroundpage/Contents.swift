@@ -16,6 +16,8 @@ extension Int {
 2.increment().square()
 
 
+
+
 // MARK: - Using Custom Operator
 
 // See ForwardApplication.swift
@@ -23,7 +25,6 @@ extension Int {
 2 |> increment |> square
 
 // See ForwardComposition.swift
-
 increment >>> square
 square >>> increment
 
