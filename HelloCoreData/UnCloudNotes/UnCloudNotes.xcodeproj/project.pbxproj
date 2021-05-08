@@ -41,6 +41,7 @@
 		C7F78B8E194E1D5A00BAF550 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		C7F78B90194E1F1300BAF550 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NoteTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D1A5387F2646E8D7003708C4 /* UnCloudNotesDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,9 +450,10 @@
 		C7F78B92194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D1A5387F2646E8D7003708C4 /* UnCloudNotesDataModel2.xcdatamodel */,
 				C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */,
 			);
-			currentVersion = C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */;
+			currentVersion = D1A5387F2646E8D7003708C4 /* UnCloudNotesDataModel2.xcdatamodel */;
 			path = UnCloudNotesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
