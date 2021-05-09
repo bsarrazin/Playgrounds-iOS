@@ -3,7 +3,10 @@ import CoreData
 
 class NotesListViewController: UITableViewController {
     // MARK: - Properties
-    private lazy var stack = CoreDataStack(name: "UnCloudNotesDataModel")
+    private lazy var stack: CoreDataStack = {
+        let manager = MigrationManager(modelName: "UnCloudNotesDataModel", enableMigrations: true)
+        return manager.stack
+    }()
 
     private lazy var notes: NSFetchedResultsController<Note> = {
         let context = stack.context

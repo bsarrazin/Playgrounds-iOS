@@ -26,6 +26,7 @@
 		D1A5388C2648380D003708C4 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388B2648380D003708C4 /* ImageAttachment.swift */; };
 		D1A5388E264838A3003708C4 /* Mapping3to4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */; };
 		D1A538902648398E003708C4 /* MigrationPolicy3To4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */; };
+		D1A53892264846D2003708C4 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A53891264846D2003708C4 /* MigrationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D1A5388B2648380D003708C4 /* ImageAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
 		D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping3to4.xcmappingmodel; sourceTree = "<group>"; };
 		D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy3To4.swift; sourceTree = "<group>"; };
+		D1A53891264846D2003708C4 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				D1A538882646F5C0003708C4 /* Mapping2to3.xcmappingmodel */,
 				D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */,
+				D1A53891264846D2003708C4 /* MigrationManager.swift */,
 				D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */,
 			);
 			name = Migrations;
@@ -273,6 +276,7 @@
 				D1A538892646F5C0003708C4 /* Mapping2to3.xcmappingmodel in Sources */,
 				C7BBD86D194FFCDF00BDDB95 /* Note.swift in Sources */,
 				C71A68741948D2CB003A62E7 /* CreateNoteViewController.swift in Sources */,
+				D1A53892264846D2003708C4 /* MigrationManager.swift in Sources */,
 				C7F78B91194E1F1300BAF550 /* NoteTableViewCell.swift in Sources */,
 				C77E1E7D1947D6D700762492 /* AppDelegate.swift in Sources */,
 				D1A5388C2648380D003708C4 /* ImageAttachment.swift in Sources */,
