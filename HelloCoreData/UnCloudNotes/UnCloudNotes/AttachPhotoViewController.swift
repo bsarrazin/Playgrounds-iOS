@@ -32,10 +32,11 @@ extension AttachPhotoViewController: UIImagePickerControllerDelegate {
         guard let note = note, let context = note.managedObjectContext
             else { return }
 
-        let attachment = Attachment(context: context)
+        let attachment = ImageAttachment(context: context)
         attachment.created = .init()
         attachment.image = info[.originalImage] as? UIImage
         attachment.note = note
+        attachment.caption = "New Photo"
         navigationController?.popViewController(animated: true)
     }
 }

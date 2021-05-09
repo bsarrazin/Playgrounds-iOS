@@ -23,6 +23,9 @@
 		C7F78B94194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7F78B92194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld */; };
 		D1A538822646F158003708C4 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A538812646F158003708C4 /* Attachment.swift */; };
 		D1A538892646F5C0003708C4 /* Mapping2to3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D1A538882646F5C0003708C4 /* Mapping2to3.xcmappingmodel */; };
+		D1A5388C2648380D003708C4 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388B2648380D003708C4 /* ImageAttachment.swift */; };
+		D1A5388E264838A3003708C4 /* Mapping3to4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */; };
+		D1A538902648398E003708C4 /* MigrationPolicy3To4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,10 @@
 		D1A538802646F04B003708C4 /* UnCloudNotesDataModel3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel3.xcdatamodel; sourceTree = "<group>"; };
 		D1A538812646F158003708C4 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		D1A538882646F5C0003708C4 /* Mapping2to3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping2to3.xcmappingmodel; sourceTree = "<group>"; };
+		D1A5388A26483652003708C4 /* UnCloudNotesDataModel4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel4.xcdatamodel; sourceTree = "<group>"; };
+		D1A5388B2648380D003708C4 /* ImageAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
+		D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping3to4.xcmappingmodel; sourceTree = "<group>"; };
+		D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy3To4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +147,7 @@
 			children = (
 				D1A538812646F158003708C4 /* Attachment.swift */,
 				C7BBD86C194FFCDF00BDDB95 /* Note.swift */,
+				D1A5388B2648380D003708C4 /* ImageAttachment.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -148,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				D1A538882646F5C0003708C4 /* Mapping2to3.xcmappingmodel */,
+				D1A5388D264838A3003708C4 /* Mapping3to4.xcmappingmodel */,
+				D1A5388F2648398E003708C4 /* MigrationPolicy3To4.swift */,
 			);
 			name = Migrations;
 			sourceTree = "<group>";
@@ -251,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A5388E264838A3003708C4 /* Mapping3to4.xcmappingmodel in Sources */,
 				95863A171D6DE01200247AE2 /* NoteImageTableViewCell.swift in Sources */,
 				C7F78B94194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld in Sources */,
 				C77E1E7F1947D6D700762492 /* NotesListViewController.swift in Sources */,
@@ -258,11 +269,13 @@
 				D1A538822646F158003708C4 /* Attachment.swift in Sources */,
 				279570D719827BC400F52BA9 /* ImageTransformer.swift in Sources */,
 				790FC6E4198439AD00B52A53 /* AttachPhotoViewController.swift in Sources */,
+				D1A538902648398E003708C4 /* MigrationPolicy3To4.swift in Sources */,
 				D1A538892646F5C0003708C4 /* Mapping2to3.xcmappingmodel in Sources */,
 				C7BBD86D194FFCDF00BDDB95 /* Note.swift in Sources */,
 				C71A68741948D2CB003A62E7 /* CreateNoteViewController.swift in Sources */,
 				C7F78B91194E1F1300BAF550 /* NoteTableViewCell.swift in Sources */,
 				C77E1E7D1947D6D700762492 /* AppDelegate.swift in Sources */,
+				D1A5388C2648380D003708C4 /* ImageAttachment.swift in Sources */,
 				C73DC122195148B500DFADAB /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,11 +480,12 @@
 		C7F78B92194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D1A5388A26483652003708C4 /* UnCloudNotesDataModel4.xcdatamodel */,
 				D1A538802646F04B003708C4 /* UnCloudNotesDataModel3.xcdatamodel */,
 				D1A5387F2646E8D7003708C4 /* UnCloudNotesDataModel2.xcdatamodel */,
 				C7F78B93194E1FA900BAF550 /* UnCloudNotesDataModel.xcdatamodel */,
 			);
-			currentVersion = D1A538802646F04B003708C4 /* UnCloudNotesDataModel3.xcdatamodel */;
+			currentVersion = D1A5388A26483652003708C4 /* UnCloudNotesDataModel4.xcdatamodel */;
 			path = UnCloudNotesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

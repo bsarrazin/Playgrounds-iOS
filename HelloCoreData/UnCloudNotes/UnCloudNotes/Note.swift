@@ -22,7 +22,10 @@ class Note: NSManagedObject {
 }
 
 extension Note {
-    var image: UIImage? { latestAttachment?.image }
+    var image: UIImage? {
+        let attachment = latestAttachment as? ImageAttachment
+        return attachment?.image
+    }
     var latestAttachment: Attachment? {
         guard let attachments = attachments, let first = attachments.first
             else { return nil }
