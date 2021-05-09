@@ -35,7 +35,10 @@ class CoreDataStack {
     }
     
     lazy var storeDescription: NSPersistentStoreDescription = {
-        return NSPersistentStoreDescription(url: storeURL)
+        let desc = NSPersistentStoreDescription(url: storeURL)
+        desc.shouldMigrateStoreAutomatically = true
+        desc.shouldInferMappingModelAutomatically = false
+        return desc
     }()
     
     private lazy var container: NSPersistentContainer = {
