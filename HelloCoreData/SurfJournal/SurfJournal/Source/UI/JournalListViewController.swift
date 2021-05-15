@@ -4,7 +4,7 @@ import CoreData
 class JournalListViewController: UITableViewController {
     // MARK: Properties
 
-    var coreDataStack: CoreDataStack!
+    var stack: CoreDataStack!
     var fetchedResultsController: NSFetchedResultsController<JournalEntry> = NSFetchedResultsController()
 
     // MARK: IBOutlets
@@ -39,7 +39,7 @@ class JournalListViewController: UITableViewController {
                 fatalError("Application storyboard mis-configuration")
             }
 
-            let newJournalEntry = JournalEntry(context: coreDataStack.mainContext)
+            let newJournalEntry = JournalEntry(context: stack.mainContext)
 
             detailViewController.journalEntry = newJournalEntry
             detailViewController.context = newJournalEntry.managedObjectContext
@@ -65,49 +65,54 @@ private extension JournalListViewController {
         navigationItem.leftBarButtonItem = activityIndicatorBarButtonItem()
 
         // 1
-        let context = coreDataStack.mainContext
-        var results: [JournalEntry] = []
-        do {
-            results = try context.fetch(self.surfJournalFetchRequest())
-        } catch let error as NSError {
-            print("ERROR: \(error.localizedDescription)")
-        }
-
-        // 2
-        let exportFilePath = NSTemporaryDirectory() + "export.csv"
-        let exportFileURL = URL(fileURLWithPath: exportFilePath)
-        FileManager.default.createFile(atPath: exportFilePath, contents: Data(), attributes: nil)
-
-        // 3
-        let fileHandle: FileHandle?
-        do {
-            fileHandle = try FileHandle(forWritingTo: exportFileURL)
-        } catch let error as NSError {
-            print("ERROR: \(error.localizedDescription)")
-            fileHandle = nil
-        }
-
-        if let fileHandle = fileHandle {
-            // 4
-            for journalEntry in results {
-                fileHandle.seekToEndOfFile()
-                guard let csvData = journalEntry
-                        .csv()
-                        .data(using: .utf8, allowLossyConversion: false) else {
-                    continue
-                }
-
-                fileHandle.write(csvData)
+        stack.storeContainer.performBackgroundTask { context in
+            var results: [JournalEntry] = []
+            do {
+                results = try context.fetch(self.surfJournalFetchRequest())
+            } catch let error as NSError {
+                print("ERROR: \(error.localizedDescription)")
             }
 
-            // 5
-            fileHandle.closeFile()
+            // 2
+            let exportFilePath = NSTemporaryDirectory() + "export.csv"
+            let exportFileURL = URL(fileURLWithPath: exportFilePath)
+            FileManager.default.createFile(atPath: exportFilePath, contents: Data(), attributes: nil)
 
-            print("Export Path: \(exportFilePath)")
-            self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
-            self.showExportFinishedAlertView(exportFilePath)
-        } else {
-            self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
+            // 3
+            let fileHandle: FileHandle?
+            do {
+                fileHandle = try FileHandle(forWritingTo: exportFileURL)
+            } catch let error as NSError {
+                print("ERROR: \(error.localizedDescription)")
+                fileHandle = nil
+            }
+
+            if let fileHandle = fileHandle {
+                // 4
+                for journalEntry in results {
+                    fileHandle.seekToEndOfFile()
+                    guard let csvData = journalEntry
+                            .csv()
+                            .data(using: .utf8, allowLossyConversion: false) else {
+                        continue
+                    }
+
+                    fileHandle.write(csvData)
+                }
+
+                // 5
+                fileHandle.closeFile()
+
+                print("Export Path: \(exportFilePath)")
+                DispatchQueue.main.async {
+                    self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
+                    self.showExportFinishedAlertView(exportFilePath)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
+                }
+            }
         }
     }
 
@@ -140,7 +145,7 @@ private extension JournalListViewController {
     func journalListFetchedResultsController() -> NSFetchedResultsController<JournalEntry> {
         let fetchedResultController = NSFetchedResultsController(
             fetchRequest: surfJournalFetchRequest(),
-            managedObjectContext: coreDataStack.mainContext,
+            managedObjectContext: stack.mainContext,
             sectionNameKeyPath: nil,
             cacheName: nil
         )
@@ -240,8 +245,8 @@ extension JournalListViewController {
         guard case(.delete) = editingStyle else { return }
 
         let surfJournalEntry = fetchedResultsController.object(at: indexPath)
-        coreDataStack.mainContext.delete(surfJournalEntry)
-        coreDataStack.saveContext()
+        stack.mainContext.delete(surfJournalEntry)
+        stack.saveContext()
     }
 }
 
@@ -263,7 +268,7 @@ extension JournalListViewController: JournalEntryDelegate {
                 fatalError("Error: \(error.localizedDescription)")
             }
             // 3
-            self.coreDataStack.saveContext()
+            self.stack.saveContext()
         }
         // 4
         dismiss(animated: true)

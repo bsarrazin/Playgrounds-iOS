@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let listViewController = navigationController.topViewController as? JournalListViewController
         else { fatalError("Application Storyboard mis-configuration") }
 
-        listViewController.coreDataStack = coreDataStack
+        listViewController.stack = coreDataStack
 
         return true
     }

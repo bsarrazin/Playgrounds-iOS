@@ -75,14 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				4A42A8721997F44300398605 /* Main.storyboard */,
-				4A42A86C1997F44300398605 /* AppDelegate.swift */,
-				4A32281419AA98E400355616 /* JournalListViewController.swift */,
-				4A32281219AA98A800355616 /* JournalEntryViewController.swift */,
-				4ADEF5FD19AA73900005051C /* SurfEntryTableViewCell.swift */,
+				D12837DC264FFDAD00DC6417 /* Source */,
 				4A21E59B1997F68400FB9BC0 /* SurfJournalModel.xcdatamodeld */,
-				4A42A88B1997F4FC00398605 /* CoreDataStack.swift */,
-				4ADEF60219AA78420005051C /* JournalEntry.swift */,
-				952D54A11D45405800F89B8B /* JournalEntry+Helper.swift */,
 				4A42A8751997F44300398605 /* Images.xcassets */,
 				4AD2130A19B252AC000CD6AB /* CoreDataSeed */,
 				4A42A86A1997F44300398605 /* Supporting Files */,
@@ -107,6 +101,36 @@
 				4AD2131319B253E0000CD6AB /* SurfJournalModel.sqlite-wal */,
 			);
 			path = CoreDataSeed;
+			sourceTree = "<group>";
+		};
+		D12837DC264FFDAD00DC6417 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D12837DE264FFDCC00DC6417 /* Entities */,
+				D12837DD264FFDBA00DC6417 /* UI */,
+				4A42A86C1997F44300398605 /* AppDelegate.swift */,
+				4A42A88B1997F4FC00398605 /* CoreDataStack.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D12837DD264FFDBA00DC6417 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A32281219AA98A800355616 /* JournalEntryViewController.swift */,
+				4A32281419AA98E400355616 /* JournalListViewController.swift */,
+				4ADEF5FD19AA73900005051C /* SurfEntryTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D12837DE264FFDCC00DC6417 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4ADEF60219AA78420005051C /* JournalEntry.swift */,
+				952D54A11D45405800F89B8B /* JournalEntry+Helper.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +166,7 @@
 				TargetAttributes = {
 					4A42A8661997F44300398605 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6M9MT4KJZD;
 						LastSwiftMigration = 1100;
 					};
 				};
@@ -339,10 +364,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 6M9MT4KJZD;
 				INFOPLIST_FILE = SurfJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.srz.razeware.SurfJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SurfJournal/SurfJournal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -355,10 +381,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 6M9MT4KJZD;
 				INFOPLIST_FILE = SurfJournal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.srz.razeware.SurfJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SurfJournal/SurfJournal-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
