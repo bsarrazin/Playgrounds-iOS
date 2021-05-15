@@ -30,8 +30,11 @@ class JournalListViewController: UITableViewController {
             // 3
             let surfJournalEntry = fetchedResultsController.object(at: indexPath)
             // 4
-            detailViewController.journalEntry = surfJournalEntry
-            detailViewController.context = surfJournalEntry.managedObjectContext
+            let child = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+            child.parent = stack.mainContext
+            let entry = child.object(with: surfJournalEntry.objectID) as? JournalEntry
+            detailViewController.journalEntry = entry
+            detailViewController.context = child
             detailViewController.delegate = self
         } else if segue.identifier == "SegueListToDetailAdd" {
             guard let navigationController = segue.destination as? UINavigationController,
@@ -254,11 +257,9 @@ extension JournalListViewController {
 extension JournalListViewController: JournalEntryDelegate {
     func didFinish(viewController: JournalEntryViewController, didSave: Bool) {
         // 1
-        guard didSave,
-              let context = viewController.context,
-              context.hasChanges else {
-            dismiss(animated: true)
-            return
+        let context: NSManagedObjectContext = viewController.context
+        guard didSave, context.hasChanges else {
+            return dismiss(animated: true)
         }
         // 2
         context.perform {
